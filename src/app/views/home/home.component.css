@@ -1,11 +1,26 @@
+.home {
+    margin: 20px;
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
 .home .title {
-
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.2;
-
+    margin-bottom: 16px;
+    color: white !important;
 }
 
 .home .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.5;
 }
