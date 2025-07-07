@@ -1,0 +1,29 @@
+# Versão do formato do Docker Compose (compatibilidade com recursos)
+version: '3.8'
+
+# Define os serviços que serão executados
+services:
+  # Nome do serviço da aplicação Angular
+  angular-app:
+    # Configurações de build da imagem
+    build:
+      context: .           # Diretório base para o build (pasta atual)
+      dockerfile: Dockerfile # Arquivo com instruções de build
+    container_name: angular-crud-container  # Nome específico do container
+    # Mapeamento de portas: porta_host:porta_container
+    ports:
+      - "8080:80"  # Mapeia porta 8080 do host para porta 80 do container (nginx)
+    restart: unless-stopped  # Reinicia automaticamente se parar (exceto parada manual)
+    # Redes que o container participará
+    networks:
+      - angular-network
+
+# Configuração de redes personalizadas
+networks:
+  angular-network:
+    driver: bridge  # Tipo de rede: bridge permite comunicação entre containers
+
+# Volumes para persistência de dados (não usado neste projeto, mas declarado)
+volumes:
+  angular-data:
+    driver: local   # Volume local no host
